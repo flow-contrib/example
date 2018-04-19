@@ -16,5 +16,7 @@ func Hello(ctx context.Context, conf config.Configuration) (err error) {
 	name := conf.GetString("name", "world")
 	fmt.Printf("Hello: %s\n", name)
 
+	flow.AppendOutput(ctx, "name", name)
+
 	return
 }
